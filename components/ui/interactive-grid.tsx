@@ -183,7 +183,7 @@ export function InteractiveGrid() {
     });
     mo.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ["class"],
+      attributeFilter: ["class", "data-accent"],
     });
 
     window.addEventListener("pointermove", onMove, { passive: true });

@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowRight, Code2, Download, Link2, Mail } from "lucide-react";
+import { ArrowDown, ArrowRight, Download, Mail } from "lucide-react";
 import { useI18n } from "@/components/providers/language-provider";
 import { siteConfig } from "@/data/site";
 import { tr } from "@/lib/i18n/types";
+import { GithubIcon, LinkedinIcon } from "@/components/ui/brand-icons";
 import { CodeTerminal } from "@/components/ui/code-terminal";
 import { InteractiveGrid } from "@/components/ui/interactive-grid";
 import { KineticText } from "@/components/ui/kinetic-text";
@@ -30,8 +31,8 @@ const item = {
 };
 
 const socials = [
-  { href: siteConfig.links.github, label: "GitHub", Icon: Code2 },
-  { href: siteConfig.links.linkedin, label: "LinkedIn", Icon: Link2 },
+  { href: siteConfig.links.github, label: "GitHub", Icon: GithubIcon },
+  { href: siteConfig.links.linkedin, label: "LinkedIn", Icon: LinkedinIcon },
   { href: `mailto:${siteConfig.email}`, label: "Email", Icon: Mail },
 ];
 

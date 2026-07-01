@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Link2, Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { FormEvent, useState } from "react";
 import { useI18n } from "@/components/providers/language-provider";
 import { siteConfig } from "@/data/site";
 import { tr } from "@/lib/i18n/types";
+import { GithubIcon, LinkedinIcon } from "@/components/ui/brand-icons";
 import { AnimatedSection, Reveal } from "@/components/ui/animated-section";
 
 const inputClass =
@@ -85,7 +86,7 @@ export function Contact() {
                 className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-card/60 text-muted transition hover:border-accent/40 hover:text-accent"
                 aria-label="GitHub"
               >
-                <Code2 size={17} />
+                <GithubIcon size={17} />
               </a>
               <a
                 href={siteConfig.links.linkedin}
@@ -94,7 +95,7 @@ export function Contact() {
                 className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-card/60 text-muted transition hover:border-accent/40 hover:text-accent"
                 aria-label="LinkedIn"
               >
-                <Link2 size={17} />
+                <LinkedinIcon size={17} />
               </a>
             </div>
           </div>

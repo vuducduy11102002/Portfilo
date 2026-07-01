@@ -2,9 +2,7 @@
 
 import { motion } from "framer-motion";
 import {
-  Code2,
   Layers,
-  Link2,
   Mail,
   MapPin,
   ShieldCheck,
@@ -22,6 +20,7 @@ import {
   Stagger,
   staggerItem,
 } from "@/components/ui/animated-section";
+import { GithubIcon, LinkedinIcon } from "@/components/ui/brand-icons";
 
 const principleIcons: Record<string, LucideIcon> = {
   performance: Zap,
@@ -31,8 +30,8 @@ const principleIcons: Record<string, LucideIcon> = {
 };
 
 const socials = [
-  { href: siteConfig.links.github, label: "GitHub", Icon: Code2 },
-  { href: siteConfig.links.linkedin, label: "LinkedIn", Icon: Link2 },
+  { href: siteConfig.links.github, label: "GitHub", Icon: GithubIcon },
+  { href: siteConfig.links.linkedin, label: "LinkedIn", Icon: LinkedinIcon },
   { href: `mailto:${siteConfig.email}`, label: "Email", Icon: Mail },
 ];
 

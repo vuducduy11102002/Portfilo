@@ -1,12 +1,13 @@
 "use client";
 
-import { Code2, Link2, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { useI18n } from "@/components/providers/language-provider";
 import { siteConfig } from "@/data/site";
+import { GithubIcon, LinkedinIcon } from "@/components/ui/brand-icons";
 
 const socials = [
-  { href: siteConfig.links.github, label: "GitHub", Icon: Code2 },
-  { href: siteConfig.links.linkedin, label: "LinkedIn", Icon: Link2 },
+  { href: siteConfig.links.github, label: "GitHub", Icon: GithubIcon },
+  { href: siteConfig.links.linkedin, label: "LinkedIn", Icon: LinkedinIcon },
   { href: `mailto:${siteConfig.email}`, label: "Email", Icon: Mail },
 ];
 

@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Code2, Sparkles } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
+import { GithubIcon } from "@/components/ui/brand-icons";
 import { useI18n } from "@/components/providers/language-provider";
 import { projects, type Project } from "@/data/projects";
 import { tr } from "@/lib/i18n/types";
@@ -23,7 +24,7 @@ function ProjectLinks({ project, t }: { project: Project; t: Dictionary }) {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 text-sm text-muted transition hover:text-accent"
         >
-          <Code2 size={15} /> {t.projects.code}
+          <GithubIcon size={15} /> {t.projects.code}
         </a>
       )}
       {project.demo && (

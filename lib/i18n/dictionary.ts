@@ -27,6 +27,7 @@ export const dictionary = {
       learning: "Đang học",
       exploring: "Đang khám phá",
       localTime: "Giờ địa phương",
+      quote: "Xây để chạy thật, không chỉ để demo.",
     },
     metrics: {
       tag: "// theo con số",
@@ -103,6 +104,7 @@ export const dictionary = {
       learning: "Learning",
       exploring: "Exploring",
       localTime: "Local time",
+      quote: "Build for production, not just the demo.",
     },
     metrics: {
       tag: "// by the numbers",

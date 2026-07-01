@@ -7,7 +7,7 @@ import { LOCALES, type Locale } from "@/lib/i18n/types";
 
 const labels: Record<Locale, string> = { vi: "VI", en: "EN" };
 
-export function LanguageToggle() {
+export function LanguageToggle({ idSuffix = "default" }: { idSuffix?: string }) {
   const { locale, setLocale, t } = useI18n();
   const [mounted, setMounted] = useState(false);
 
@@ -42,7 +42,7 @@ export function LanguageToggle() {
           >
             {active && (
               <motion.span
-                layoutId="lang-active"
+                layoutId={`lang-active-${idSuffix}`}
                 className="absolute inset-0 -z-10 rounded-md bg-accent/15 ring-1 ring-accent/30"
                 transition={{ type: "spring", stiffness: 350, damping: 30 }}
               />

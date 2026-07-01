@@ -1,7 +1,7 @@
 export type Locale = "vi" | "en";
 
 export const LOCALES: Locale[] = ["vi", "en"];
-export const DEFAULT_LOCALE: Locale = "vi";
+export const DEFAULT_LOCALE: Locale = "en";
 export const LANG_STORAGE_KEY = "portfolio-lang";
 
 /** Giá trị song ngữ: { vi, en }. */

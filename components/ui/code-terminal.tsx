@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { TerminalRobot } from "@/components/ui/terminal-robot";
 
 type LineType = "cmd" | "out" | "ok";
 type Line = { text: string; type: LineType };
@@ -68,11 +69,12 @@ export function CodeTerminal({ className }: { className?: string }) {
       />
 
       {/* Thanh tiêu đề */}
-      <div className="flex items-center gap-2 border-b border-border/60 px-4 py-2.5">
+      <div className="relative flex items-center gap-2 border-b border-border/60 px-4 py-2.5">
         <span className="h-3 w-3 rounded-full bg-red-400/80" />
         <span className="h-3 w-3 rounded-full bg-yellow-400/80" />
         <span className="h-3 w-3 rounded-full bg-green-400/80" />
         <span className="ml-2 text-xs text-muted">duy@portfolio ~ zsh</span>
+        <TerminalRobot />
       </div>
 
       {/* Thân terminal */}

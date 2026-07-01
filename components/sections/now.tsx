@@ -1,10 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BookOpen, Hammer, MapPin, Telescope, type LucideIcon } from "lucide-react";
+import { BookOpen, Hammer, Quote, Telescope, type LucideIcon } from "lucide-react";
 import { useI18n } from "@/components/providers/language-provider";
-import { NOW_TIMEZONE, nowItems } from "@/data/now";
-import { siteConfig } from "@/data/site";
+import { nowItems } from "@/data/now";
 import { tr } from "@/lib/i18n/types";
 import {
   AnimatedSection,
@@ -12,7 +11,6 @@ import {
   Stagger,
   staggerItem,
 } from "@/components/ui/animated-section";
-import { LiveClock } from "@/components/ui/live-clock";
 
 const iconByKey: Record<string, LucideIcon> = {
   building: Hammer,
@@ -60,22 +58,19 @@ export function Now() {
           );
         })}
 
-        {/* Đồng hồ live */}
+        {/* Châm ngôn */}
         <motion.div
           variants={staggerItem}
-          className="flex flex-col justify-between rounded-xl border border-accent/25 bg-accent-muted/40 p-5 backdrop-blur-sm"
+          className="relative flex flex-col justify-center overflow-hidden rounded-xl border border-accent/25 bg-accent-muted/40 p-5 backdrop-blur-sm"
         >
-          <div className="flex items-center gap-2 text-xs font-medium text-muted">
-            <MapPin size={15} className="text-accent" />
-            {tr(locale, siteConfig.location)}
-          </div>
-          <div className="mt-3">
-            <LiveClock
-              timeZone={NOW_TIMEZONE}
-              className="font-mono text-3xl font-bold text-foreground tabular-nums"
-            />
-            <p className="mt-1 text-xs text-muted">{t.now.localTime}</p>
-          </div>
+          <Quote
+            size={40}
+            className="absolute -right-1 -top-1 text-accent/15"
+            fill="currentColor"
+          />
+          <p className="relative text-base font-medium leading-relaxed text-foreground italic">
+            &ldquo;{t.now.quote}&rdquo;
+          </p>
         </motion.div>
       </Stagger>
     </AnimatedSection>

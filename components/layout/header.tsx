@@ -59,7 +59,7 @@ export function Header() {
             );
           })}
           <span className="mx-2 h-5 w-px bg-border" />
-          <LanguageToggle />
+          <LanguageToggle idSuffix="desktop" />
           <AccentSwitcher />
           <ThemeToggle />
         </nav>
@@ -105,7 +105,7 @@ export function Header() {
                 </a>
               ))}
               <div className="mt-2 flex items-center gap-3 border-t border-border px-3 pt-3">
-                <LanguageToggle />
+                <LanguageToggle idSuffix="mobile" />
               </div>
             </div>
           </motion.nav>
