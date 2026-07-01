@@ -75,6 +75,7 @@ export const dictionary = {
       themeLight: "Chuyển sang sáng",
       themeDark: "Chuyển sang tối",
       scrollDown: "Cuộn xuống",
+      accentColor: "Màu chủ đạo",
     },
   },
   en: {
@@ -150,6 +151,7 @@ export const dictionary = {
       themeLight: "Switch to light",
       themeDark: "Switch to dark",
       scrollDown: "Scroll down",
+      accentColor: "Accent color",
     },
   },
 } as const;

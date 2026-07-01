@@ -56,14 +56,14 @@ export function PageIntro({ children }: PageIntroProps) {
               <div
                 className="aurora-blob left-1/4 top-1/4 h-64 w-64"
                 style={{
-                  background: "rgba(167,139,250,0.30)",
+                  background: "rgba(96,165,250,0.30)",
                   animation: "aurora-drift-a 8s ease-in-out infinite",
                 }}
               />
               <div
                 className="aurora-blob bottom-1/4 right-1/4 h-64 w-64"
                 style={{
-                  background: "rgba(244,114,182,0.24)",
+                  background: "rgba(129,140,248,0.24)",
                   animation: "aurora-drift-b 10s ease-in-out infinite",
                 }}
               />

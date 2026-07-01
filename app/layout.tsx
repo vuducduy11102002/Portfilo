@@ -49,7 +49,7 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("portfolio-theme");if(t==="light"){return;}document.documentElement.classList.add("dark");}catch(e){document.documentElement.classList.add("dark");}})();`,
+            __html: `(function(){try{var d=document.documentElement;var t=localStorage.getItem("portfolio-theme");if(t!=="light"){d.classList.add("dark");}var a=localStorage.getItem("portfolio-accent");if(a){d.setAttribute("data-accent",a);}}catch(e){document.documentElement.classList.add("dark");}})();`,
           }}
         />
       </head>

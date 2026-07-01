@@ -6,6 +6,7 @@ import { useState } from "react";
 import { LogoMark } from "@/components/intro/logo-mark";
 import { useI18n } from "@/components/providers/language-provider";
 import { siteConfig } from "@/data/site";
+import { AccentSwitcher } from "@/components/ui/accent-switcher";
 import { LanguageToggle } from "@/components/ui/language-toggle";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { useActiveSection } from "@/lib/use-active-section";
@@ -59,11 +60,12 @@ export function Header() {
           })}
           <span className="mx-2 h-5 w-px bg-border" />
           <LanguageToggle />
+          <AccentSwitcher />
           <ThemeToggle />
         </nav>
 
-        <div className="flex items-center gap-2 md:hidden">
-          <LanguageToggle />
+        <div className="flex items-center gap-1.5 md:hidden">
+          <AccentSwitcher />
           <ThemeToggle />
           <button
             type="button"
@@ -102,6 +104,9 @@ export function Header() {
                   {item.label}
                 </a>
               ))}
+              <div className="mt-2 flex items-center gap-3 border-t border-border px-3 pt-3">
+                <LanguageToggle />
+              </div>
             </div>
           </motion.nav>
         )}

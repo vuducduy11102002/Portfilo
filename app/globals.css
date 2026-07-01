@@ -14,19 +14,19 @@
   --card: #ffffff;
   --card-hover: #fafafb;
 
-  /* Signature ramp: electric violet → fuchsia → pink */
-  --accent: #7c3aed;
-  --accent-hover: #6d28d9;
-  --accent-2: #c026d3;
-  --accent-3: #db2777;
-  --accent-muted: #f5f3ff;
-  --accent-foreground: #5b21b6;
-  --ring: #8b5cf6;
+  /* Signature ramp (mặc định): blue → cyan → indigo */
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-2: #0891b2;
+  --accent-3: #4f46e5;
+  --accent-muted: #eff6ff;
+  --accent-foreground: #1e40af;
+  --ring: #3b82f6;
 
   /* Aurora background blobs (nhạt ở light mode) */
-  --aurora-1: rgba(124, 58, 237, 0.16);
-  --aurora-2: rgba(192, 38, 211, 0.14);
-  --aurora-3: rgba(219, 39, 119, 0.12);
+  --aurora-1: rgba(37, 99, 235, 0.16);
+  --aurora-2: rgba(8, 145, 178, 0.14);
+  --aurora-3: rgba(79, 70, 229, 0.12);
   --glow-strength: 0.10;
   --grain-opacity: 0.025;
 
@@ -49,17 +49,17 @@
   --card: #101016;
   --card-hover: #16161d;
 
-  --accent: #a78bfa;
-  --accent-hover: #c4b5fd;
-  --accent-2: #e879f9;
-  --accent-3: #f472b6;
-  --accent-muted: #2e1065;
-  --accent-foreground: #ddd6fe;
-  --ring: #a78bfa;
+  --accent: #60a5fa;
+  --accent-hover: #93c5fd;
+  --accent-2: #22d3ee;
+  --accent-3: #818cf8;
+  --accent-muted: #172554;
+  --accent-foreground: #bfdbfe;
+  --ring: #60a5fa;
 
-  --aurora-1: rgba(167, 139, 250, 0.22);
-  --aurora-2: rgba(232, 121, 249, 0.18);
-  --aurora-3: rgba(244, 114, 182, 0.20);
+  --aurora-1: rgba(96, 165, 250, 0.22);
+  --aurora-2: rgba(34, 211, 238, 0.18);
+  --aurora-3: rgba(129, 140, 248, 0.20);
   --glow-strength: 0.28;
   --grain-opacity: 0.04;
 
@@ -69,6 +69,70 @@
   --intro-bg: #06060a;
   --intro-fg: #fafafa;
   --intro-muted: #71717a;
+}
+
+/* ─── Bảng màu accent thay đổi được (data-accent trên <html>) ───
+   Mỗi bảng ghi đè ramp accent cho cả light ([data-accent="x"]) và
+   dark (.dark[data-accent="x"] — đặc thù hơn nên thắng .dark). */
+
+/* Violet (mặc định) */
+[data-accent="violet"] {
+  --accent: #7c3aed; --accent-hover: #6d28d9; --accent-2: #c026d3; --accent-3: #db2777;
+  --accent-muted: #f5f3ff; --accent-foreground: #5b21b6; --ring: #8b5cf6;
+  --aurora-1: rgba(124, 58, 237, 0.16); --aurora-2: rgba(192, 38, 211, 0.14); --aurora-3: rgba(219, 39, 119, 0.12);
+}
+.dark[data-accent="violet"] {
+  --accent: #a78bfa; --accent-hover: #c4b5fd; --accent-2: #e879f9; --accent-3: #f472b6;
+  --accent-muted: #2e1065; --accent-foreground: #ddd6fe; --ring: #a78bfa;
+  --aurora-1: rgba(167, 139, 250, 0.22); --aurora-2: rgba(232, 121, 249, 0.18); --aurora-3: rgba(244, 114, 182, 0.20);
+}
+
+/* Blue */
+[data-accent="blue"] {
+  --accent: #2563eb; --accent-hover: #1d4ed8; --accent-2: #0891b2; --accent-3: #4f46e5;
+  --accent-muted: #eff6ff; --accent-foreground: #1e40af; --ring: #3b82f6;
+  --aurora-1: rgba(37, 99, 235, 0.16); --aurora-2: rgba(8, 145, 178, 0.14); --aurora-3: rgba(79, 70, 229, 0.12);
+}
+.dark[data-accent="blue"] {
+  --accent: #60a5fa; --accent-hover: #93c5fd; --accent-2: #22d3ee; --accent-3: #818cf8;
+  --accent-muted: #172554; --accent-foreground: #bfdbfe; --ring: #60a5fa;
+  --aurora-1: rgba(96, 165, 250, 0.22); --aurora-2: rgba(34, 211, 238, 0.18); --aurora-3: rgba(129, 140, 248, 0.20);
+}
+
+/* Emerald */
+[data-accent="emerald"] {
+  --accent: #059669; --accent-hover: #047857; --accent-2: #0891b2; --accent-3: #0d9488;
+  --accent-muted: #ecfdf5; --accent-foreground: #065f46; --ring: #10b981;
+  --aurora-1: rgba(5, 150, 105, 0.16); --aurora-2: rgba(8, 145, 178, 0.14); --aurora-3: rgba(13, 148, 136, 0.12);
+}
+.dark[data-accent="emerald"] {
+  --accent: #34d399; --accent-hover: #6ee7b7; --accent-2: #22d3ee; --accent-3: #2dd4bf;
+  --accent-muted: #022c22; --accent-foreground: #a7f3d0; --ring: #34d399;
+  --aurora-1: rgba(52, 211, 153, 0.22); --aurora-2: rgba(34, 211, 238, 0.18); --aurora-3: rgba(45, 212, 191, 0.20);
+}
+
+/* Amber (ấm) */
+[data-accent="amber"] {
+  --accent: #d97706; --accent-hover: #b45309; --accent-2: #ea580c; --accent-3: #e11d48;
+  --accent-muted: #fffbeb; --accent-foreground: #92400e; --ring: #f59e0b;
+  --aurora-1: rgba(217, 119, 6, 0.16); --aurora-2: rgba(234, 88, 12, 0.14); --aurora-3: rgba(225, 29, 72, 0.12);
+}
+.dark[data-accent="amber"] {
+  --accent: #fbbf24; --accent-hover: #fcd34d; --accent-2: #fb923c; --accent-3: #fb7185;
+  --accent-muted: #451a03; --accent-foreground: #fde68a; --ring: #fbbf24;
+  --aurora-1: rgba(251, 191, 36, 0.22); --aurora-2: rgba(251, 146, 60, 0.18); --aurora-3: rgba(251, 113, 133, 0.20);
+}
+
+/* Rose */
+[data-accent="rose"] {
+  --accent: #e11d48; --accent-hover: #be123c; --accent-2: #db2777; --accent-3: #c026d3;
+  --accent-muted: #fff1f2; --accent-foreground: #9f1239; --ring: #f43f5e;
+  --aurora-1: rgba(225, 29, 72, 0.16); --aurora-2: rgba(219, 39, 119, 0.14); --aurora-3: rgba(192, 38, 211, 0.12);
+}
+.dark[data-accent="rose"] {
+  --accent: #fb7185; --accent-hover: #fda4af; --accent-2: #f472b6; --accent-3: #e879f9;
+  --accent-muted: #4c0519; --accent-foreground: #fecdd3; --ring: #fb7185;
+  --aurora-1: rgba(251, 113, 133, 0.22); --aurora-2: rgba(244, 114, 182, 0.18); --aurora-3: rgba(232, 121, 249, 0.20);
 }
 
 @theme inline {

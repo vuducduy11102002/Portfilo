@@ -44,7 +44,7 @@ export function ChatWidget() {
 
   useEffect(() => setMounted(true), []);
 
-  // Coach-mark: hiện khi cuộn tới gần cuối trang, chỉ lần đầu
+  // Coach-mark: hiện ngay khi vào trang (sau khi intro tan), chỉ lần đầu
   useEffect(() => {
     if (!mounted) return;
     let seen = false;
@@ -53,17 +53,8 @@ export function ChatWidget() {
     } catch {}
     if (seen) return;
 
-    function onScroll() {
-      const nearBottom =
-        window.innerHeight + window.scrollY >=
-        document.documentElement.scrollHeight - 260;
-      if (nearBottom) {
-        setShowHint(true);
-        window.removeEventListener("scroll", onScroll);
-      }
-    }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const id = setTimeout(() => setShowHint(true), 3600);
+    return () => clearTimeout(id);
   }, [mounted]);
 
   // Auto-scroll xuống cuối khi có tin nhắn mới / mở panel
@@ -222,23 +213,29 @@ export function ChatWidget() {
       <AnimatePresence>
         {showHint && !open && (
           <motion.div
-            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+            initial={{ opacity: 0, y: 18, scale: 0.7 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mr-1 max-w-[21rem] rounded-2xl rounded-br-sm border border-accent/30 bg-card p-5 shadow-xl shadow-accent/15"
+            exit={{ opacity: 0, scale: 0.8, transition: { duration: 0.15 } }}
+            transition={{ type: "spring", stiffness: 260, damping: 14 }}
+            className="relative mr-1 max-w-[21rem]"
           >
-            <button
-              type="button"
-              onClick={markSeen}
-              aria-label={t.ask.close}
-              className="absolute right-3 top-3 text-muted transition hover:text-foreground"
+            <motion.div
+              animate={{ y: [0, -5, 0] }}
+              transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+              className="relative rounded-2xl rounded-br-sm border-2 border-accent/40 bg-card p-5 shadow-xl shadow-accent/25 ring-1 ring-accent/10"
             >
-              <X size={16} />
-            </button>
-            <p className="pr-5 text-base leading-relaxed text-foreground">
-              {t.ask.hint}
-            </p>
+              <button
+                type="button"
+                onClick={markSeen}
+                aria-label={t.ask.close}
+                className="absolute right-3 top-3 text-muted transition hover:text-foreground"
+              >
+                <X size={16} />
+              </button>
+              <p className="pr-5 text-base leading-relaxed text-foreground">
+                {t.ask.hint}
+              </p>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
