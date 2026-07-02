@@ -33,7 +33,7 @@ export function Skills() {
             variants={staggerItem}
             whileHover={{ y: -6 }}
             transition={{ type: "spring", stiffness: 300, damping: 22 }}
-            className="group relative overflow-hidden rounded-xl border border-border bg-card/60 p-6 backdrop-blur-sm transition-colors hover:border-accent/30"
+            className="group relative overflow-hidden rounded-xl border border-border bg-card/60 p-6 transition-colors hover:border-accent/30"
           >
             {/* glow góc khi hover */}
             <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-accent/10 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100" />

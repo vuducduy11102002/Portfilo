@@ -38,12 +38,13 @@ export function InteractiveGrid() {
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const gap = 34;
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    const gap = 40;
     const influence = 160;
     let width = 0;
     let height = 0;
     let running = false;
+    let needsDraw = true; // chỉ vẽ lại khi có thay đổi (chuột/màu/resize)
     let cols: number[] = [];
     let rows: number[] = [];
 
@@ -135,7 +136,10 @@ export function InteractiveGrid() {
     }
 
     function loop() {
-      draw();
+      if (needsDraw) {
+        draw();
+        needsDraw = false;
+      }
       raf.current = requestAnimationFrame(loop);
     }
 
@@ -145,17 +149,36 @@ export function InteractiveGrid() {
         return;
       }
       cancelAnimationFrame(raf.current);
+      needsDraw = true;
       loop();
     }
 
     function onMove(e: PointerEvent) {
       const rect = canvas!.getBoundingClientRect();
-      mouse.current.x = e.clientX - rect.left;
-      mouse.current.y = e.clientY - rect.top;
+      const nx = e.clientX - rect.left;
+      const ny = e.clientY - rect.top;
+      // bỏ qua nếu con trỏ ở xa vùng lưới (không ảnh hưởng gì)
+      if (
+        nx < -influence ||
+        ny < -influence ||
+        nx > width + influence ||
+        ny > height + influence
+      ) {
+        if (mouse.current.x !== -9999) {
+          mouse.current.x = -9999;
+          mouse.current.y = -9999;
+          needsDraw = true;
+        }
+        return;
+      }
+      mouse.current.x = nx;
+      mouse.current.y = ny;
+      needsDraw = true;
     }
     function onLeave() {
       mouse.current.x = -9999;
       mouse.current.y = -9999;
+      needsDraw = true;
     }
 
     readColors();
@@ -163,6 +186,7 @@ export function InteractiveGrid() {
 
     const ro = new ResizeObserver(() => {
       resize();
+      needsDraw = true;
       if (reduce || !running) draw();
     });
     ro.observe(parent);
@@ -179,6 +203,7 @@ export function InteractiveGrid() {
 
     const mo = new MutationObserver(() => {
       readColors();
+      needsDraw = true;
       if (reduce || !running) draw();
     });
     mo.observe(document.documentElement, {

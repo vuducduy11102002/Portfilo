@@ -58,7 +58,7 @@ export function Hero() {
           {siteConfig.available && (
             <motion.div
               variants={item}
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3.5 py-1.5 text-xs font-medium text-muted backdrop-blur-sm"
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3.5 py-1.5 text-xs font-medium text-muted"
             >
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
@@ -115,7 +115,7 @@ export function Hero() {
             <Magnetic>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 px-5 py-3 text-sm font-medium text-foreground backdrop-blur-sm transition-colors hover:border-accent/40 hover:bg-card-hover"
+                className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent/40 hover:bg-card-hover"
               >
                 {t.hero.contact}
               </a>
@@ -137,7 +137,7 @@ export function Hero() {
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-card/60 text-muted backdrop-blur-sm transition hover:border-accent/40 hover:text-accent"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-card/60 text-muted transition hover:border-accent/40 hover:text-accent"
                 aria-label={label}
               >
                 <Icon size={17} />

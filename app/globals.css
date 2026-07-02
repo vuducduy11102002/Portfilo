@@ -234,7 +234,7 @@ body {
 .aurora-blob {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(80px);
+  filter: blur(64px);
   will-change: transform;
 }
 

@@ -10,7 +10,7 @@ import { GithubIcon, LinkedinIcon } from "@/components/ui/brand-icons";
 import { AnimatedSection, Reveal } from "@/components/ui/animated-section";
 
 const inputClass =
-  "w-full rounded-lg border border-border bg-card/60 px-4 py-2.5 text-sm text-foreground outline-none backdrop-blur-sm transition placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-ring/20";
+  "w-full rounded-lg border border-border bg-card/60 px-4 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-ring/20";
 
 export function Contact() {
   const { t, locale } = useI18n();

@@ -43,7 +43,7 @@ export function Experience() {
                 <motion.div
                   whileHover={{ x: 4 }}
                   transition={{ type: "spring", stiffness: 300, damping: 24 }}
-                  className="rounded-xl border border-border bg-card/60 p-5 backdrop-blur-sm transition-colors hover:border-accent/30 sm:p-6"
+                  className="rounded-xl border border-border bg-card/60 p-5 transition-colors hover:border-accent/30 sm:p-6"
                 >
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <h3 className="text-lg font-semibold text-foreground">
@@ -82,7 +82,7 @@ export function Experience() {
           <GraduationCap size={16} className="text-accent" />
           {t.experience.education}
         </h3>
-        <div className="rounded-xl border border-border bg-card/60 p-5 backdrop-blur-sm sm:p-6">
+        <div className="rounded-xl border border-border bg-card/60 p-5 sm:p-6">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <h4 className="text-lg font-semibold text-foreground">
               {tr(locale, education.school)}

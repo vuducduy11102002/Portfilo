@@ -42,7 +42,7 @@ export function Now() {
             <motion.div
               key={it.icon}
               variants={staggerItem}
-              className="group relative overflow-hidden rounded-xl border border-border bg-card/60 p-5 backdrop-blur-sm transition-colors hover:border-accent/30"
+              className="group relative overflow-hidden rounded-xl border border-border bg-card/60 p-5 transition-colors hover:border-accent/30"
             >
               <div className="pointer-events-none absolute -right-8 -top-8 h-20 w-20 rounded-full bg-accent/10 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100" />
               <div className="flex items-center gap-2 text-accent">
@@ -61,7 +61,7 @@ export function Now() {
         {/* Châm ngôn */}
         <motion.div
           variants={staggerItem}
-          className="relative flex flex-col justify-center overflow-hidden rounded-xl border border-accent/25 bg-accent-muted/40 p-5 backdrop-blur-sm"
+          className="relative flex flex-col justify-center overflow-hidden rounded-xl border border-accent/25 bg-accent-muted/40 p-5"
         >
           <Quote
             size={40}

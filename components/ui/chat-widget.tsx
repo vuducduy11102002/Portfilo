@@ -17,7 +17,7 @@ function BotBubble({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-end gap-2">
       <LogoMark name={siteConfig.name} size="sm" />
-      <div className="max-w-[85%] rounded-2xl rounded-bl-sm border border-border bg-card/70 px-3.5 py-2.5 text-sm leading-relaxed whitespace-pre-line text-foreground backdrop-blur-sm">
+      <div className="max-w-[85%] rounded-2xl rounded-bl-sm border border-border bg-card/70 px-3.5 py-2.5 text-sm leading-relaxed whitespace-pre-line text-foreground">
         {children}
       </div>
     </div>
@@ -164,7 +164,7 @@ export function ChatWidget() {
                         key={f.id}
                         type="button"
                         onClick={() => ask(f.id)}
-                        className="rounded-full border border-border bg-card/60 px-3 py-1.5 text-xs text-muted backdrop-blur-sm transition hover:border-accent/40 hover:text-accent"
+                        className="rounded-full border border-border bg-card/60 px-3 py-1.5 text-xs text-muted transition hover:border-accent/40 hover:text-accent"
                       >
                         {tr(locale, f.question)}
                       </button>

@@ -63,7 +63,7 @@ export function About() {
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 px-3.5 py-2 text-sm text-muted backdrop-blur-sm transition hover:border-accent/40 hover:text-accent"
+                className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 px-3.5 py-2 text-sm text-muted transition hover:border-accent/40 hover:text-accent"
               >
                 <Icon size={16} /> {label}
               </a>
@@ -78,7 +78,7 @@ export function About() {
                 key={tr(locale, stat.label)}
                 whileHover={{ y: -3 }}
                 transition={{ duration: 0.2 }}
-                className="rounded-xl border border-border bg-card/60 p-5 backdrop-blur-sm transition-colors hover:border-accent/30"
+                className="rounded-xl border border-border bg-card/60 p-5 transition-colors hover:border-accent/30"
                 style={{ transitionDelay: `${i * 40}ms` }}
               >
                 <p className="text-gradient text-3xl font-bold">{stat.value}</p>
@@ -106,7 +106,7 @@ export function About() {
             <motion.div
               key={p.icon}
               variants={staggerItem}
-              className="rounded-xl border border-border bg-card/60 p-5 backdrop-blur-sm transition-colors hover:border-accent/30"
+              className="rounded-xl border border-border bg-card/60 p-5 transition-colors hover:border-accent/30"
             >
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-accent-muted text-accent">
                 <Icon size={18} />
