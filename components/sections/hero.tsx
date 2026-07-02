@@ -9,6 +9,7 @@ import { GithubIcon, LinkedinIcon } from "@/components/ui/brand-icons";
 import { CodeTerminal } from "@/components/ui/code-terminal";
 import { InteractiveGrid } from "@/components/ui/interactive-grid";
 import { KineticText } from "@/components/ui/kinetic-text";
+import { HeroAvatar } from "@/components/ui/hero-avatar";
 import { Magnetic } from "@/components/ui/magnetic";
 import { RoleRotator } from "@/components/ui/role-rotator";
 import { Tilt } from "@/components/ui/tilt";
@@ -55,6 +56,10 @@ export function Hero() {
       <div className="relative z-10 grid w-full items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
         {/* Cột trái */}
         <motion.div variants={container} initial="hidden" animate="show">
+          <motion.div variants={item} className="mb-6">
+            <HeroAvatar src={siteConfig.avatar} name={siteConfig.name} />
+          </motion.div>
+
           {siteConfig.available && (
             <motion.div
               variants={item}
@@ -72,7 +77,7 @@ export function Hero() {
             variants={item}
             className="mb-2 text-base font-medium text-muted"
           >
-            {t.hero.greeting} 👋
+            {t.hero.greeting}
           </motion.p>
 
           <h1 className="text-5xl font-bold tracking-tight sm:text-6xl xl:text-7xl">

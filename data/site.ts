@@ -6,6 +6,8 @@ export const siteConfig = {
   name: "Vũ Đức Duy",
   /** Thay bằng path logo của bạn: "/logo.svg" — để trống thì dùng initials */
   logo: "" as string,
+  /** Ảnh avatar hero: thả file vào web/public/ rồi điền "/avatar.jpg". Để trống → dùng monogram. */
+  avatar: "/Media.jpg" as string,
 
   role: {
     vi: "Full Stack Developer",

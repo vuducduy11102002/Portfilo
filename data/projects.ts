@@ -50,8 +50,8 @@ export const projects: Project[] = [
   },
   {
     title: {
-      vi: "iArt Pod Client — Công cụ Nhà máy in DTG",
-      en: "iArt Pod Client — DTG Print Factory Tool",
+      vi: "Pod Client - Print Factory Tool",
+      en: "Pod Client - Print Factory Tool",
     },
     description: {
       vi: "Tự động hoá pipeline in DTG/DTF với công cụ dàn trang bằng Python, tích hợp máy Brother GTX + ONYX RIP qua AutoIt3, và tối ưu ghép cuộn vải giúp giảm hao phí.",
