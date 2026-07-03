@@ -37,6 +37,22 @@ const socials = [
   { href: `mailto:${siteConfig.email}`, label: "Email", Icon: Mail },
 ];
 
+const CV_FILENAME =
+  "VŨ ĐỨC DUY - Application for Systems Integration & Core Banking Systems Developer.pdf";
+
+async function downloadCV() {
+  const res = await fetch("/cv.pdf");
+  const blob = await res.blob();
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = CV_FILENAME;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
 export function Hero() {
   const { t, locale } = useI18n();
 
@@ -125,14 +141,14 @@ export function Hero() {
                 {t.hero.contact}
               </a>
             </Magnetic>
-            <a
-              href="/cv.pdf"
-              download="VŨ ĐỨC DUY - Application for Systems Integration & Core Banking Systems Developer.pdf"
+            <button
+              type="button"
+              onClick={() => void downloadCV()}
               className="inline-flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-muted transition-colors hover:text-accent"
             >
               <Download size={16} />
               {t.hero.downloadCV}
-            </a>
+            </button>
           </motion.div>
 
           <motion.div variants={item} className="mt-8 flex items-center gap-2">
