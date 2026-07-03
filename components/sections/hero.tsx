@@ -127,7 +127,7 @@ export function Hero() {
             </Magnetic>
             <a
               href="/cv.pdf"
-              download="Vu-Duc-Duy-CV.pdf"
+              download="VŨ ĐỨC DUY - Application for Systems Integration & Core Banking Systems Developer.pdf"
               className="inline-flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-muted transition-colors hover:text-accent"
             >
               <Download size={16} />
